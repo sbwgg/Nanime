@@ -14,11 +14,16 @@ import AnimeDetails from "./pages/AnimeDetail/animeDetail.page";
 import Anime from "./pages/Anime/Anime.page";
 import Navbar from "./components/Navbar/navbar.component";
 import { freezeBody } from "./utilites/utilites.tools";
-
+import Search from "./pages/search/search.page";
+import SideHistory from "./components/SideHistory/sideHistory.component";
+import History from "./pages/History/history.page";
+import Genres from "./pages/Genre/genre.page";
+import Movies from "./pages/movies/movies.page";
 const Navigation = ({
     searchHandler,
     handleSideHistory,
     setOpenHistory,
+    openHistory,
     setInput,
     input,
     scrolled,
@@ -33,6 +38,10 @@ const Navigation = ({
                 input={input}
                 scrolled={scrolled}
             />
+            <SideHistory
+                    openHistory={openHistory}
+                    setOpenHistory={setOpenHistory}
+                />
             <Outlet />
         </Fragment>
     );
@@ -68,6 +77,7 @@ const App = () => {
                             searchHandler={searchHandler}
                             handleSideHistory={handleSideHistory}
                             setOpenHistory={setOpenHistory}
+                            openHistory={openHistory}
                             setInput={setInput}
                             input={input}
                             scrolled={scrolled}
@@ -82,7 +92,14 @@ const App = () => {
                         path="/detail/:animeName"
                         element={<AnimeDetails />}
                     />
+                    <Route path="/genre/:genre" element={<Genres />} />
                     <Route path="/watch/:id" element={<Anime />} />
+                    <Route path="/search/:term" element={<Search />} />
+                    <Route path="/history" element={<History />} />
+                    <Route
+                        path="/movies/:letter/:page"
+                        element={<Movies />}
+                    />
                 </Route>
             </Routes>
         </Router>

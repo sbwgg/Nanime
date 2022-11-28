@@ -1,0 +1,84 @@
+@use '../../styles/App.theme.scss' as theme;
+.Movies {
+    margin-top: 100px;
+    display: flex;
+
+    .body {
+        margin: auto;
+        width: 100%;
+        max-width: 1250px;
+        display: block;
+        align-items: center;
+
+        .alphabets {
+            width: 100% !important;
+            padding: 20px !important;
+            background-color: rgba(255, 255, 255, 0.21);
+            margin: auto;
+            display: inline-block;
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+
+            a {
+                float: left;
+                display: block;
+                text-align: center;
+                font-size: 15pt;
+                // border-radius: 50%;
+                background-color: rgb(59, 206, 255);
+                margin: 6px 0;
+                margin-right: 10px;
+                // padding: 3px 20px;
+                width: 50px;
+                padding: 3px 0;
+                border-radius: 20px;
+                font-weight: bold;
+                color: white;
+                font-size: bold;
+                text-decoration: none;
+                transition: background .3s;
+
+                &:hover {
+                    background-color: rgb(0, 133, 177);
+                }
+
+                &.active {
+                    background-color: rgb(238, 0, 255);
+                }
+            }
+        }
+
+        .pageControl {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20pt;
+
+            .button {
+                border-radius: 50%;
+                background-color: rgb(59, 206, 255);
+                width: 50px;
+                height: 50px;
+                text-align: center;
+                line-height: 1.1;
+                font-size: 30pt;
+                color: white;
+                cursor: pointer;
+            }
+
+            .pageNum {
+                margin: 0 20px;
+            }
+        }
+
+        .layout {
+            padding-top: 30px;
+
+            h1 {
+                margin: 10px;
+                margin-left: 0;
+            }
+        }
+    }
+}

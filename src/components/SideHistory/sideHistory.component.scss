@@ -1,0 +1,75 @@
+@use '../../styles/App.theme.scss' as theme;
+.sideHistory {
+    width: 500px;
+    height: calc(100% - 100px);
+    position: fixed;
+    padding: 10px 20px;
+    top: 60px;
+    right: -100%;
+    z-index: 11;
+    border-radius: 15px;
+    margin: 10px;
+    background-color: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(20px);
+    opacity: 0;
+    overflow-y: scroll;
+    transition: .5s;
+
+    .historyLink {
+        color: white;
+        font-weight: bold;
+        border-radius: 20px;
+        margin: 20px 0;
+        background-color: theme.$lightblue;
+        width: fit-content;
+        cursor: pointer;
+        padding: 5px 20px;
+        font-size: 15pt;
+        transition: .3s;
+
+        &:hover {
+            background-color: theme.$lightbluedarker;
+        }
+    }
+
+    &.active {
+        right: 0;
+        opacity: 1;
+    }
+
+    &::-webkit-scrollbar {
+        width: 0px;
+    }
+
+    #History {
+        width: 100%;
+
+        .header {
+            margin-top: 0 !important;
+        }
+
+        .historyBody {
+            grid-template-columns: repeat(1, 1fr);
+            width: 100%;
+
+            .record {
+                width: 100%;
+            }
+        }
+    }
+}
+
+.historyOverlay {
+    background-color: rgba(0, 0, 0, .4);
+    z-index: 10;
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 100%;
+    transition: .3s;
+
+    &.active {
+        left: 0;
+    }
+}

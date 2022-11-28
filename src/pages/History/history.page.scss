@@ -1,0 +1,145 @@
+@use '../../styles/App.theme.scss' as theme;
+#History {
+    .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 100px;
+
+        h1 {
+            margin: 0;
+        }
+
+        p {
+            color: white;
+            cursor: pointer;
+            padding: 5px 15px;
+            background-color: rgb(255, 71, 71);
+            border-radius: 30px;
+            font-weight: bold;
+            transition: .3s;
+
+            &:hover {
+                background-color: rgb(255, 17, 17);
+            }
+        }
+    }
+
+    .historyBody {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 20px;
+
+        p {
+            color: white;
+            margin-top: 50px;
+            font-size: 17pt;
+            font-weight: bold;
+        }
+
+        .record {
+            border-radius: 10px;
+            width: 100%;
+            margin: 0;
+            background-color: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            box-shadow: theme.$boxshadow;
+
+            .recordBody {
+                height: 200px;
+                width: 100%;
+                display: flex;
+
+                .delete {
+                    position: absolute;
+                    top: 8px;
+                    right: 10px;
+                    width: 35px;
+                    height: 35px;
+                    background-color: rgba(255, 255, 255, 0.5);
+                    border-radius: 50%;
+                    cursor: pointer;
+                    transition: .3s ease-in;
+
+                    &::after,
+                    &::before {
+                        content: '';
+                        height: 20px;
+                        width: 4px;
+                        top: 7px;
+                        border-radius: 5px;
+                        left: 16px;
+                        position: absolute;
+                        background-color: theme.$lightgreydarker;
+                    }
+
+                    &::after {
+                        transform: rotate(45deg);
+                    }
+
+                    &::before {
+                        transform: rotate(-45deg);
+                    }
+
+                    &:hover {
+                        transform: rotate(90deg);
+                        background-color: rgba(255, 255, 255, 1);
+                    }
+                }
+
+                a {
+                    width: 150px;
+                    min-width: 150px;
+
+                    img {
+                        object-fit: cover;
+                        height: 100%;
+                        width: 100%;
+                        border-radius: 10px;
+                    }
+                }
+
+                .body {
+                    height: 200px;
+                    margin-left: 20px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: flex-start;
+
+                    .copy {
+                        h1 {
+                            font-size: 13pt;
+                            margin-top: 0px;
+                            margin-right: 30px;
+                        }
+
+                        h2 {
+                            font-size: 13pt;
+                            color: white;
+                        }
+
+                        a {
+                            margin-top: 10px;
+                            display: inline-block;
+                            color: white;
+                            text-decoration: none;
+                            font-size: 18pt;
+                            text-align: center;
+                            padding: 8px 0px;
+                            width: 160px;
+                            font-weight: bold;
+                            border-radius: 30px;
+                            background-color: rgb(255, 93, 28);
+                            cursor: pointer;
+                            transition: .3s;
+
+                            &:hover {
+                                background-color: rgb(255, 72, 0);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
