@@ -1,0 +1,129 @@
+@use '../../styles/App.theme.scss' as theme;
+.Navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: fit-content !important;
+    padding: 0;
+    width: 100%;
+    display: block;
+    z-index: 10;
+    transition: .3s;
+
+    &.active {
+        backdrop-filter: blur(20px) saturate(1);
+        background-color: rgba(0, 0, 0, 0.2);
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+    }
+
+    &.scrolled {
+        background-color: rgba(0, 0, 0, 0.2);
+        backdrop-filter: blur(20px) saturate(2);
+        top: 0;
+        width: 100%;
+        padding: 0;
+        // left: 1%;
+        // border-radius: 20px;
+
+        .tools {
+            .HomeIcon {
+                h1 {
+                    margin: 15px 2px;
+                }
+            }
+        }
+
+        //     .history {
+        //         transition: .3s;
+        //         margin-right: 20px;
+        //     }
+        // }
+    }
+
+    .tools {
+        display: flex;
+        align-items: center;
+        width: 100%;
+
+        .HomeIcon {
+            cursor: pointer;
+            width: fit-content;
+            margin: 0 20px;
+            color: white;
+            margin-right: 0;
+
+            h1 {
+                margin: 20px 5px;
+                margin-left: 10px;
+                font-size: 27pt;
+                transition: margin .8s;
+
+                span {
+                    color: theme.$lightblue;
+
+                    span {
+                        color: theme.$lightbluedarker;
+                    }
+                }
+            }
+        }
+        .search{
+            display: flex;
+            width: 400px;
+            justify-content: flex-end;
+            height: 45px;
+            border-radius: 40px;
+            background-color: rgba(245, 245, 245, 0.307);
+            margin-left: auto;
+            margin-right: 20px;
+            .searchIcon {
+                width: 60px;
+                height: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin: 0 25px;
+                margin-right: 10px;
+                img {
+                    cursor: pointer;
+                    width: 30px;
+                }
+            }
+            form {
+                width: 100%;
+                height: 100%;
+                input {
+                    background-color: transparent;
+                    width: 100%;
+                    height: 100%;
+                    padding: 0 2.5%;
+                    padding-left: 20px;
+                    font-size: 20pt;
+                    font-weight: 700;
+                    color: white;
+                    letter-spacing: 3px;
+                    &::placeholder {
+                        color: white;
+                        font-size: 14pt;
+                    }
+                }
+            }
+        }
+
+
+        .history {
+            display: flex;
+            align-items: center;
+            width: 50px;
+            min-width: 40px;
+            margin-right: 30px;
+            transition: .3s;
+
+            img {
+                width: 100%;
+                cursor: pointer;
+            }
+        }
+    }
+}
