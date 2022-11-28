@@ -1,0 +1,110 @@
+@use './App.theme.scss' as theme;
+
+
+
+.layout {
+    width: 1250px;
+    margin: auto;
+    display: block;
+    justify-content: center;
+    align-items: center;
+
+    h1 {
+        width: fit-content;
+        width: 100%;
+        font-size: 25pt;
+        margin-top: 100px;
+        color: white;
+    }
+}
+
+
+.strip {
+    font-size: 18pt;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin-bottom: 20px;
+    margin-top: 15px;
+
+    &::after {
+        display: block;
+        position: relative;
+        content: '';
+        height: 2px;
+        margin-left: 10px;
+        width: 100%;
+        border-radius: 3px;
+        background-color: rgba(255, 255, 255, 0.2);
+        top: 1px;
+    }
+}
+
+.pager {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 0;
+
+    .sub {
+        display: flex;
+        align-items: center;
+
+        span {
+            font-size: 14pt;
+            background-color: theme.$lightblue;
+            cursor: pointer;
+            margin-right: 10px;
+            padding: 3px 15px;
+            border-radius: 20px;
+            font-weight: 700;
+            color: white;
+            transition: .3s;
+
+            &.active {
+                background-color: theme.$selected;
+
+                &:hover {
+                    background-color: theme.$selected;
+                }
+            }
+
+            &:hover {
+                background-color: theme.$lightbluedarker;
+            }
+        }
+    }
+
+    .pignator {
+        display: flex;
+        align-items: center;
+        background-color: theme.$lightblue;
+        box-shadow: theme.$boxshadow;
+        border-radius: 30px;
+
+        .minus,
+        .add {
+            font-size: 23pt;
+            background-color: theme.$lightblue;
+            width: 40px;
+            height: 40px;
+            text-align: center;
+            color: white;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: .3s;
+
+            &:hover {
+                background-color: theme.$lightbluedarker;
+            }
+        }
+
+        .pageNum {
+            font-size: 20pt;
+            margin: 0 20px;
+            color: white;
+            font-weight: 700;
+        }
+    }
+}

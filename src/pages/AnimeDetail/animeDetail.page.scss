@@ -1,0 +1,197 @@
+@use '../../styles/App.theme.scss' as theme;
+.AnimeDetails {
+    margin-top: 100px;
+
+    .body {
+        width: 100%;
+        max-width: 1200px;
+        padding: 0 20px;
+        margin: auto;
+
+        .description {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+
+            .left {
+                width: 30%;
+                height: fit-content;
+                overflow: hidden;
+                border-radius: 14px;
+                cursor: pointer;
+
+                .image {
+                    // height: 350px;
+                    width: 100%;
+                    min-width: 230px;
+                    aspect-ratio: 1 / 1.4;
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                    box-shadow: theme.$boxshadow;
+                    transition: transform .3s;
+                }
+
+                &:hover {
+                    .image {
+                        transform: scale(1.02);
+                    }
+                }
+            }
+
+            .right {
+                width: 70%;
+                padding: 0 2%;
+
+                h1 {
+                    margin-top: 0;
+                    margin-bottom: 5px;
+                    font-size: 23pt;
+                    color: white;
+                }
+
+                h2 {
+                    font-size: 13pt;
+                    color: white;
+                }
+
+                .genres {
+                    display: inline-block;
+
+                    a {
+                        text-decoration: none;
+                        color: white;
+                        float: left;
+                        background-color: rgb(0, 191, 255);
+                        padding: 4px 15px;
+                        border-radius: 13px;
+                        transition: .3s;
+                        margin-right: 10px;
+                        margin-top: 5px;
+                        font-weight: bold;
+
+                        &:hover {
+                            background-color: rgb(33, 157, 199);
+                        }
+                    }
+                }
+
+                p {
+                    font-size: 13pt;
+                    font-weight: bold;
+                    line-height: 1.4;
+                    margin-bottom: 27px;
+                    color: white;
+                    background-color: rgba(255, 255, 255, 0.2);
+                    backdrop-filter: blur(10px);
+                    padding: 10px 15px;
+                    border-radius: 10px;
+                    cursor: pointer;
+
+                    span {
+                        color: rgb(0, 191, 255);
+                        transition: .3s;
+                        cursor: pointer;
+
+                        &:hover {
+                            color: rgb(33, 157, 199);
+                        }
+                    }
+                }
+
+                b {
+                    color: white;
+                    font-size: 13pt;
+                    background-color: rgba(255, 255, 255, 0.3);
+                    backdrop-filter: blur(10px);
+                    padding: 5px 25px;
+                    border-radius: 20px;
+                }
+
+                .watch {
+                    font-size: 20pt;
+                    width: fit-content;
+                    font-weight: bold;
+                    margin-top: 30px;
+                    padding: 10px 25px;
+                    border-radius: 30px;
+                    background-color: rgb(255, 93, 28);
+                    color: white;
+                    cursor: pointer;
+                    transition: .3s;
+
+                    &:hover {
+                        background-color: rgb(255, 72, 0);
+                    }
+
+                    &.disabled {
+                        background-color: theme.$lightgrey;
+                    }
+                }
+            }
+        }
+
+        .episodes {
+            margin-top: 40px;
+            width: 100%;
+            overflow: hidden;
+            display: inline-block;
+            background-color: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            padding: 25px;
+            border-radius: 15px;
+
+            h1 {
+                margin: 0px;
+                margin-bottom: 20px;
+                letter-spacing: 3px;
+                // text-decoration: underline;
+                color: white;
+                // background-color: $lightblue;
+                // width: fit-content;
+                // padding: 10px 50px;
+            }
+
+            div {
+                cursor: pointer;
+                float: left;
+                text-align: center;
+                border-radius: 15px;
+                color: white;
+                font-weight: bold;
+                width: 55px;
+                padding: 4px 8px;
+                margin: 3px 0px;
+                margin-right: 10px;
+                background-color: rgb(0, 191, 255);
+                text-decoration: none;
+                transition: .3s;
+
+                &:hover {
+                    background-color: rgb(33, 157, 199);
+                }
+            }
+        }
+    }
+}
+
+
+
+.backgroundImage {
+    position: fixed;
+    top: -5vh;
+    left: -5%;
+    z-index: 0;
+    height: 120vh;
+    width: 110%;
+    // padding-top: 130px;
+    background: linear-gradient(0deg, theme.$backgroundColor 0%, #20212456 60%, theme.$backgroundColor 100%);
+    margin-top: -120px;
+    z-index: -1;
+
+    img {
+        filter: blur(20px) brightness(0.5) saturate(1.5);
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+}
