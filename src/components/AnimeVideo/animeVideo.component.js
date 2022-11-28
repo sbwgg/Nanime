@@ -11,6 +11,7 @@ const AnimeVideo = ({ episodesList }) => {
     const navigate = useNavigate();
     useEffect(() => {
         if (id.includes("-episode-")) {
+            setAnime(null);
             getStreamingURL(id).then((data) => {
                 if (data?.sources) {
                     setAnime(data?.sources[0]?.file);

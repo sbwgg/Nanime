@@ -129,6 +129,7 @@
                     }
 
                     .recommendation {
+                        height: fit-content !important;
                         margin-left: 0 !important;
                         .animes {
                             grid-template-columns: repeat((3, 1fr)) !important;
