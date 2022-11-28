@@ -14,7 +14,7 @@ const History = ({ wait = 0, side = false }) => {
         let history = getHistory();
         if (history && !side) scrollTop();
         setHistory(history);
-    }, []);
+    }, [side]);
     const customAnimation = keyframes`
         from {
             opacity: 0;
