@@ -13,6 +13,7 @@ import History from "./pages/History/history.page";
 import Genres from "./pages/Genre/genre.page";
 import Movies from "./pages/movies/movies.page";
 import Navigator from "./Navigator/Navigator";
+import NotAvailable from "./components/NotAvailable/NotAvailable.component";
 const App = () => {
     const [input, setInput] = useState("");
     const [scrolled, setScrolled] = useState(false);
@@ -63,6 +64,7 @@ const App = () => {
                     <Route path="/search/:term" element={<Search />} />
                     <Route path="/history" element={<History />} />
                     <Route path="/movies/:letter/:page" element={<Movies />} />
+                    <Route path="*" element={<NotAvailable/>} />
                 </Route>
             </Routes>
         </Router>
