@@ -1,0 +1,12 @@
+@use '../../styles/App.theme.scss' as theme;
+h1 {
+    font-size: 50pt;
+    margin: 0px 0px;
+    color: white;
+    span {
+        color: theme.$lightblue;
+        span {
+            color: theme.$lightbluedarker;
+        }
+    }
+}
