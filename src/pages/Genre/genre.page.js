@@ -35,7 +35,7 @@ function Genres() {
     };
     return (
         <div className="Genres layout">
-            <h1>{genre}:</h1>
+            <h1 className="strip">{genre}</h1>
             <div className="pager">
                 <div className="sub">
                     <span className="active">Any</span>

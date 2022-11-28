@@ -75,7 +75,7 @@ const History = ({ wait = 0, side = false }) => {
     return (
         <div id="History" className="layout">
             <div className="header">
-                <h1>History:</h1>
+                <h1>History</h1>
                 {history?.length > 0 ? (
                     <p
                         onClick={() => {

@@ -1,7 +1,7 @@
 @use '../../styles/App.theme.scss' as theme;
 .sideHistory {
     width: 500px;
-    height: calc(100% - 100px);
+    height: calc(100% - 80px);
     position: fixed;
     padding: 10px 20px;
     top: 60px;

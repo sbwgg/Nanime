@@ -58,7 +58,7 @@ function RecentRelease() {
     };
     return (
         <div id="RecentRelease" className="layout">
-            <h1>Recent Released:</h1>
+            <h1 className="strip">Recent Released</h1>
             <div className="pager">
                 <div className="sub">{renderType()}</div>
                 <div className="pignator">

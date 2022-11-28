@@ -35,7 +35,7 @@ function Search() {
     };
     return (
         <div className="Search layout">
-            <h1>{term}:</h1>
+            <h1 className="strip">{term}</h1>
             <div className="pager">
                 <div className="sub">
                     <span className="active">Any</span>

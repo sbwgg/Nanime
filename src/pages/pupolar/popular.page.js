@@ -30,7 +30,7 @@ function Popular() {
 
     return (
         <div id="Popular" className="layout">
-            <h1>Popular:</h1>
+            <h1 className="strip">Popular</h1>
             <div className="pager">
                 <div className="sub">
                     <span className="active">Any</span>

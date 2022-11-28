@@ -20,7 +20,11 @@
 
 
 .strip {
-    font-size: 18pt;
+    font-size: 23pt !important;
+    clear: both;
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
     font-weight: bold;
     display: flex;
     align-items: center;

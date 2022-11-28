@@ -1,22 +1,22 @@
 @media screen and (max-width: 1300px) {
     #Background {
         .body {
-            width: 90%;
-            margin: 0 5%;
+            width: 90% !important;;
+            margin: 0 5% !important;;
 
             .bodyCopy {
                 h1 {
-                    font-size: 32pt;
+                    font-size: 32pt !important;;
                 }
 
                 h3 {
-                    margin-top: 10px;
-                    font-size: 18pt;
+                    margin-top: 10px !important;;
+                    font-size: 18pt !important;;
                 }
 
                 .button {
-                    padding: 7px 20px;
-                    font-size: 14pt;
+                    padding: 7px 20px !important;;
+                    font-size: 14pt !important;;
                 }
             }
         }
@@ -25,19 +25,19 @@
     .layout {
         display: block;
         width: 96% !important;
-        margin: auto;
+        margin: auto !important;;
 
         .Cards {
-            width: 100%;
-            display: grid;
-            grid-template-columns: repeat(5, 1fr);
-            grid-auto-rows: auto;
-            grid-gap: 10px;
-            margin: auto;
+            width: 100% !important;;
+            display: grid !important;;
+            grid-template-columns: repeat(5, 1fr) !important;
+            grid-auto-rows: auto !important;
+            grid-gap: 10px !important;;
+            margin: auto !important;;
 
             .Card {
-                min-width: 160px;
-                width: 100%;
+                min-width: 160px !important;
+                width: 100% !important;
             }
         }
     }
@@ -45,25 +45,25 @@
     .Navbar {
         .searchHelper {
             &.active {
-                height: 500px;
+                height: 500px !important;
             }
         }
     }
 
     .Anime {
         .AnimeContent {
-            display: block;
+            display: block !important;
 
             .leftSection {
                 .animePlayer {
                     .description {
                         h2 {
-                            font-size: 15pt;
+                            font-size: 15pt !important;
                         }
 
                         .genres {
                             a {
-                                font-size: 11pt;
+                                font-size: 11pt !important;
                             }
                         }
                     }
@@ -71,29 +71,32 @@
             }
 
             .rightSection {
-                margin-left: 0;
+                margin-left: 0 !important;
                 margin-top: 15px;
-                width: 100%;
-                max-width: unset;
+                width: 100% !important;
+                max-width: unset !important;
 
                 .body {
-                    display: flex;
-
+                    display: flex !important;
+                    width: 100%;
                     .detail {
-                        margin-right: 15px;
-                        min-width: 280px;
+                        margin-right: 15px !important;;
+                        min-width: 280px !important;;
                     }
 
                     .recommendation {
+                        margin-top: 0 !important;
+                        margin-left: 15px !important;
+                        width: 100% !important;
                         .animes {
-                            grid-template-columns: repeat((3, 1fr));
+                            grid-template-columns: repeat((3, 1fr)) !important;
                         }
                     }
                 }
 
                 h1 {
-                    font-size: 16pt;
-                    margin-top: 10px;
+                    font-size: 16pt !important;;
+                    margin-top: 10px !important;;
                 }
             }
         }
@@ -103,14 +106,14 @@
 @media screen and (max-width: 920px) {
     .layout {
         .Cards {
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(3, 1fr) !important;
         }
     }
 
     #History {
         .historyBody {
-            display: grid;
-            grid-template-columns: repeat(1, 1fr);
+            display: grid !important;;
+            grid-template-columns: repeat(1, 1fr) !important;
         }
     }
 
@@ -118,16 +121,17 @@
         .AnimeContent {
             .rightSection {
                 .body {
-                    display: block;
+                    display: block !important;
 
                     .detail {
                         margin-right: 0 !important;
-                        margin-bottom: 15px;
+                        margin-bottom: 15px !important;;
                     }
 
                     .recommendation {
+                        margin-left: 0 !important;
                         .animes {
-                            grid-template-columns: repeat((3, 1fr));
+                            grid-template-columns: repeat((3, 1fr)) !important;
                         }
                     }
                 }
@@ -139,63 +143,63 @@
 @media screen and (max-width: 768px) {
     .layout {
         .Cards {
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: repeat(2, 1fr) !important;
         }
     }
 
     .AnimeDetails {
         .body {
             .description {
-                display: block;
+                display: block !important;
 
                 .left {
-                    width: 100%;
+                    width: 100% !important;
 
                     .image {
-                        height: 300px;
-                        background-position: center;
+                        height: 300px !important;
+                        background-position: center !important;
                     }
                 }
 
                 .right {
-                    margin-top: 30px;
-                    width: 100%;
-                    padding: 0;
+                    margin-top: 30px !important;
+                    width: 100% !important;
+                    padding: 0 !important;
                 }
             }
         }
     }
 
     .sideHistory {
-        width: calc(100% - 20px);
+        width: calc(100% - 20px) !important;
     }
 
     .Navbar {
         .tools {
             .history {
-                margin-right: 20px;
+                margin-right: 20px !important;
                 img{
-                    width: 43px;
+                    width: 43px !important;
                 }
             }
             .search{
-                width: 0px;
-                margin-right: 10px;
-                background-color: transparent;
+                width: 0px !important;
+                margin-right: 10px !important;
+                background-color: transparent !important;
                 transition: .3s;
                 &.active{
-                    width: 50%;
+                    width: 50% !important;
                     // max-width: 3;
-                    background-color: rgba(255, 255, 255, 0.2);
+                    background-color: rgba(255, 255, 255, 0.2) !important;
                     .searchIcon{
-                        padding-right: 5px;
+                        padding-right: 5px !important;
                     }
                 }
                 .searchIcon{
-                    margin-left: 0;
-                    transition: .5s;
+                    margin-left: 0 !important;
+                    transition: .5s !important;;
                     img{
-                        width: 33px;
+                        width: 33px !important;;
                     }
                 }
             }
@@ -208,7 +212,7 @@
                 .body {
                     .recommendation {
                         .animes {
-                            grid-template-columns: repeat((2, 1fr));
+                            grid-template-columns: repeat((2, 1fr)) !important;
                         }
                     }
                 }
@@ -220,7 +224,7 @@
 @media screen and (max-width: 480px) {
     .layout {
         .Cards {
-            grid-template-columns: repeat(1, 1fr);
+            grid-template-columns: repeat(1, 1fr) !important;
         }
     }
 
@@ -230,7 +234,7 @@
                 .body {
                     .recommendation {
                         .animes {
-                            grid-template-columns: repeat((1, 1fr));
+                            grid-template-columns: repeat((1, 1fr)) !important;
                         }
                     }
                 }

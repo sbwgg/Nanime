@@ -4,7 +4,7 @@ import SearchHelper from "../searchHelper/searchHelper.component";
 import SEARCH from "../../assets/icons/search.png";
 import { Link } from "react-scroll";
 import History from "../../assets/icons/history.png";
-import './navbar.component.scss';
+import "./navbar.component.scss";
 import Logo from "../logo/logo.component";
 function Navbar({
     searchHandler,
@@ -50,6 +50,14 @@ function Navbar({
         document.body.scrollTop = 0;
         document.documentElement.scrollTop = 0;
     };
+
+    const goToHistory = () =>{
+        if(location.pathname !== '/history'){
+            handleSideHistory();
+            setOpenHelper(false);
+        }
+    }
+
     return (
         <div
             className={`Navbar ${scrolled ? "scrolled" : ""} ${
@@ -67,9 +75,9 @@ function Navbar({
                         setOpenHelper(false);
                     }}
                 >
-                <Logo/>
+                    <Logo />
                 </Link>
-                <div className={`search ${openHelper?'active':''}`}>
+                <div className={`search ${openHelper ? "active" : ""}`}>
                     <form
                         onSubmit={(e) => {
                             submitHandler(e);
@@ -104,8 +112,7 @@ function Navbar({
                         src={History}
                         alt="history icon"
                         onClick={() => {
-                            handleSideHistory();
-                            setOpenHelper(false);
+                            goToHistory()
                         }}
                     />
                 </div>

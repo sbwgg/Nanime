@@ -49,7 +49,7 @@ function Movies() {
             <div className="body">
                 <div className="alphabets">{renderAlphabet()}</div>
                 <div className="layout">
-                    <h1>Movies / {letter}:</h1>
+                    <h1 className="strip">Movies / {letter}</h1>
                     <div className="pager">
                         <div className="sub">
                             <span className="active">Any</span>

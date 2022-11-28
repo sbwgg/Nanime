@@ -1,6 +1,6 @@
 import { Link, useLocation } from "react-router-dom";
 // import CRY from '../../assets/icons/cry.png';
-
+import './NotAvailable.component.scss';
 function NotAvailable({ option = true }) {
     const location = useLocation();
     return (

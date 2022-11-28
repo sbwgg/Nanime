@@ -64,6 +64,7 @@ const App = () => {
     }, []);
 
     const handleSideHistory = () => {
+      
         setOpenHistory(!openHistory);
         freezeBody(openHistory);
     };

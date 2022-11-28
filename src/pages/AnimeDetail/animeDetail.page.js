@@ -121,7 +121,7 @@ function AnimeDetails() {
                         </div>
                         {anime?.episodesList?.length !== 0 ? (
                             <div className="episodes">
-                                <h1 className="strip">Episodes:</h1>
+                                <h1 className="strip">Episodes</h1>
                                 {renderEpisodesList()}
                             </div>
                         ) : null}

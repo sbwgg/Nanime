@@ -27,7 +27,7 @@ function TopAiring() {
     };
     return (
         <div id="TopAiring" className="layout">
-            <h1>Top Airing:</h1>
+            <h1 className="strip">Top Airing</h1>
             <div className="pager">
                 <div className="sub">
                     <span className="active">Any</span>
