@@ -11,6 +11,7 @@ import Popular from "./pages/pupolar/popular.page";
 import RecentRelease from "./pages/recentRelease/recentRelease.page";
 import TopAiring from "./pages/topAiring/topAiring.page";
 import AnimeDetails from "./pages/AnimeDetail/animeDetail.page";
+import Anime from "./pages/Anime/Anime.page";
 
 const Navigation = () => {
     return (
@@ -34,6 +35,7 @@ const App = () => {
                         path="/detail/:animeName"
                         element={<AnimeDetails/>}
                     />
+                     <Route path="/watch/:id" element={<Anime />} />
                 </Route>
             </Routes>
         </Router>
