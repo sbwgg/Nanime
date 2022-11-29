@@ -1,4 +1,5 @@
 @use '../../styles/App.theme.scss' as theme;
+
 #History {
     .header {
         display: flex;
@@ -11,19 +12,18 @@
             margin: 0;
         }
 
-        p {
-            color: white;
-            cursor: pointer;
-            padding: 5px 15px;
+        svg {
+            height: 40px;
+            width: 45px;
+            aspect-ratio: 1 / 1;
+            border-radius: 50%;
+            padding: 5px;
+            fill: white;
             opacity: 0.5;
-            background-color: rgb(255, 71, 71);
-            border-radius: 30px;
-            font-weight: bold;
-            transition: .3s;
-            text-transform: uppercase;
-
-            &:hover {
-                background-color: rgb(255, 17, 17);
+            background-color: red;
+            cursor: pointer;
+            transition: all 0.3s ease 0s;
+            &:hover{
                 opacity: 1;
             }
         }
@@ -56,38 +56,19 @@
 
                 .delete {
                     position: absolute;
+                    fill: white;
+                    opacity: 0.5;
                     top: 8px;
                     right: 10px;
                     width: 35px;
                     height: 35px;
-                    background-color: rgba(255, 255, 255, 0.5);
                     border-radius: 50%;
                     cursor: pointer;
-                    transition: .3s ease-in;
-
-                    &::after,
-                    &::before {
-                        content: '';
-                        height: 20px;
-                        width: 4px;
-                        top: 7px;
-                        border-radius: 5px;
-                        left: 16px;
-                        position: absolute;
-                        background-color: theme.$lightgreydarker;
-                    }
-
-                    &::after {
-                        transform: rotate(45deg);
-                    }
-
-                    &::before {
-                        transform: rotate(-45deg);
-                    }
-
-                    &:hover {
+                    transition: all .3s ease 0s;
+                    &:hover{
                         transform: rotate(90deg);
-                        background-color: rgba(255, 255, 255, 1);
+                        opacity: 1;
+                        fill: red;
                     }
                 }
 
@@ -128,14 +109,21 @@
                             color: white;
                             text-decoration: none;
                             font-size: 18pt;
-                            text-align: center;
                             padding: 8px 0px;
-                            width: 160px;
+                            width: fit-content;
                             font-weight: bold;
                             border-radius: 30px;
                             background-color: rgb(255, 93, 28);
                             cursor: pointer;
                             transition: .3s;
+                            display:flex;
+                            align-items: center;
+                            justify-content: center;
+                            svg{
+                                height: 25px;
+                                margin-left: 5px;
+                                width: 25px;
+                            }
 
                             &:hover {
                                 background-color: rgb(255, 72, 0);

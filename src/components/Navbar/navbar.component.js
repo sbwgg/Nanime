@@ -1,11 +1,11 @@
 import { useNavigate, useLocation } from "react-router-dom";
 import { useEffect, useState, useRef } from "react";
 import SearchHelper from "../searchHelper/searchHelper.component";
-import SEARCH from "../../assets/icons/search.png";
 import { Link } from "react-scroll";
-import History from "../../assets/icons/history.png";
 import "./navbar.component.scss";
 import Logo from "../logo/logo.component";
+import { FaSearch, FaHistory } from "react-icons/fa";
+import { AiTwotoneSliders } from "react-icons/ai";
 function Navbar({
     searchHandler,
     setInput,
@@ -16,19 +16,21 @@ function Navbar({
     const location = useLocation();
     const searchBox = useRef();
     const [openHelper, setOpenHelper] = useState(false);
+    const [openSearch, setOpenSearch] = useState(false)
     const navigate = useNavigate();
     const submitHandler = (e) => {
         e.preventDefault();
+        if(!input)return;
+        setOpenSearch(false);
         navigate(input ? "search/" + input : "/");
         setOpenHelper(false);
         setInput("");
     };
 
     const searchClick = (e) => {
-        if (!input) {
-            setOpenHelper(!openHelper);
-            return;
-        }
+        setOpenSearch(!openSearch);
+        searchBox.current.focus();
+        if (!input) return;
         submitHandler(e);
     };
     useEffect(() => {
@@ -37,7 +39,7 @@ function Navbar({
         });
         window.addEventListener("keypress", (e) => {
             if (e.key === "Enter") {
-                setOpenHelper(true);
+                // setOpenHelper(true);
                 searchBox.current.focus();
             }
         });
@@ -51,12 +53,12 @@ function Navbar({
         document.documentElement.scrollTop = 0;
     };
 
-    const goToHistory = () =>{
-        if(location.pathname !== '/history'){
+    const goToHistory = () => {
+        if (location.pathname !== "/history") {
             handleSideHistory();
             setOpenHelper(false);
         }
-    }
+    };
 
     return (
         <div
@@ -73,11 +75,12 @@ function Navbar({
                     onClick={() => {
                         goHome();
                         setOpenHelper(false);
+                        setOpenSearch(false)
                     }}
                 >
                     <Logo />
                 </Link>
-                <div className={`search ${openHelper ? "active" : ""}`}>
+                <div className={`search ${openSearch ? "active" : ""}`}>
                     <form
                         onSubmit={(e) => {
                             submitHandler(e);
@@ -97,8 +100,8 @@ function Navbar({
                         />
                     </form>
                     <div className="searchIcon">
-                        <img
-                            src={SEARCH}
+                        <FaSearch
+                            fill="white"
                             alt="search icon"
                             onClick={(e) => {
                                 searchClick(e);
@@ -107,12 +110,20 @@ function Navbar({
                     </div>
                 </div>
 
+                <div className="helper">
+                    <AiTwotoneSliders onClick={()=>{
+                        setOpenHelper(!openHelper)
+                        setOpenSearch(false)
+                        }}/>
+                </div>
+
                 <div className="history">
-                    <img
-                        src={History}
+                    <FaHistory
+                        fill="white"
                         alt="history icon"
                         onClick={() => {
-                            goToHistory()
+                            goToHistory();
+                            setOpenSearch(false)
                         }}
                     />
                 </div>

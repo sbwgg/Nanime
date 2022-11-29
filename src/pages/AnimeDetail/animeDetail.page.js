@@ -4,6 +4,7 @@ import { getAnimeList, scrollTop, addToHistory } from "../../utilites/utilites.t
 import Loader from "../../components/Loader/Loade.component";
 import NotAvailable from "../../components/NotAvailable/NotAvailable.component";
 import './animeDetail.page.scss';
+import { AiFillCaretRight } from "react-icons/ai";
 function AnimeDetails() {
     const navigate = useNavigate();
     const { animeName } = useParams();
@@ -115,7 +116,8 @@ function AnimeDetails() {
                                         watchAnime();
                                     }}
                                 >
-                                    Watch Now
+                                    <span>Watch Now</span>
+                                    <AiFillCaretRight/>
                                 </div>
                             </div>
                         </div>

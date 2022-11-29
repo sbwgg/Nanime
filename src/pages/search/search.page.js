@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import Cards from "../../components/Cards/cards.component";
 import { searchAnime, scrollTop } from "../../utilites/utilites.tools";
 import './search.page.scss';
+import Pignator from "../../components/Pignator/Pignator.component";
 function Search() {
     const { term } = useParams();
     const [animes, setAnimes] = useState([]);
@@ -40,15 +41,7 @@ function Search() {
                 <div className="sub">
                     <span className="active">Any</span>
                 </div>
-                <div className="pignator">
-                    <div className="minus" onClick={minus}>
-                        -
-                    </div>
-                    <div className="pageNum">{pageNum}</div>
-                    <div className="add" onClick={add}>
-                        +
-                    </div>
-                </div>
+                <Pignator pageNum={pageNum} add={add} minus={minus}/>
             </div>
             <Cards animesData={animes} loading={loading} />
         </div>

@@ -8,6 +8,7 @@ import {
 import { Reveal } from "react-awesome-reveal";
 import { keyframes } from "@emotion/react";
 import './history.page.scss';
+import {AiOutlineClear, AiFillCloseCircle, AiFillCaretRight} from 'react-icons/ai';
 const History = ({ wait = 0, side = false }) => {
     const [history, setHistory] = useState();
     useEffect(() => {
@@ -50,10 +51,7 @@ const History = ({ wait = 0, side = false }) => {
                 return (
                     <div className="record" key={index}>
                         <div className="recordBody">
-                            <div
-                                className="delete"
-                                onClick={() => handleDelete(anime)}
-                            ></div>
+                            <AiFillCloseCircle onClick={() => handleDelete(anime)} className='delete'/>
                             <a href={"/watch/" + anime.link}>
                                 <img src={anime.image} alt={anime?.name} />
                             </a>
@@ -61,7 +59,7 @@ const History = ({ wait = 0, side = false }) => {
                                 <div className="copy">
                                     <h1>{anime.name}</h1>
                                     <h2>Episode: {anime.episode}</h2>
-                                    <a href={"/watch/" + anime.link}>Watch</a>
+                                    <a href={"/watch/" + anime.link}><b>Watch</b><AiFillCaretRight/></a>
                                 </div>
                             </div>
                         </div>
@@ -77,13 +75,7 @@ const History = ({ wait = 0, side = false }) => {
             <div className="header">
                 <h1>History</h1>
                 {history?.length > 0 ? (
-                    <p
-                        onClick={() => {
-                            handleClearHistory();
-                        }}
-                    >
-                        Clear
-                    </p>
+                    <AiOutlineClear/>
                 ) : null}
             </div>
             <div className="historyBody">

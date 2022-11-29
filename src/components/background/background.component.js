@@ -4,6 +4,7 @@ import { Link } from "react-scroll";
 import animeBGs from "../../library/libaray.animeBGs";
 import "./background.component.scss";
 import Logo from "../logo/logo.component";
+import { AiFillCaretRight } from "react-icons/ai";
 function Background({ disabled = false, fixed = false }) {
     const [index, setIndex] = useState(suffle(0, animeBGs?.length));
     const time = 10000;
@@ -34,7 +35,8 @@ function Background({ disabled = false, fixed = false }) {
                             duration={350}
                             offset={-100}
                         >
-                            Browse Anime
+                            <b>Get Started</b>
+                            <AiFillCaretRight />
                         </Link>
                     </div>
                 </div>
