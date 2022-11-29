@@ -180,13 +180,18 @@
 
     .Navbar {
         .tools {
+            .HomeIcon{
+                h1{
+                    font-size: 23pt !important;
+                }
+            }
             .history {
                 margin-right: 0px !important;
             }
 
             .search {
                 width: 0px !important;
-                margin-right: 10px !important;
+                // margin-right: 10px !important;
                 background-color: transparent !important;
                 transition: .3s;
 
@@ -206,6 +211,16 @@
 
                     img {
                         width: 33px !important;
+                    }
+                }
+            }
+        }
+        &.scrolled{
+            .tools{
+                .HomeIcon{
+                    h1{
+                        margin: 10px 0px !important;
+                        font-size: 23pt !important;
                     }
                 }
             }

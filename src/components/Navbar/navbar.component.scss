@@ -31,6 +31,7 @@
             .HomeIcon {
                 h1 {
                     margin: 15px 2px;
+                    // font-size: 23pt;
                 }
             }
         }
@@ -58,7 +59,7 @@
                 margin: 20px 5px;
                 margin-left: 10px;
                 font-size: 27pt;
-                transition: margin .8s;
+                transition: all .8s;
 
                 span {
                     color: theme.$lightblue;
