@@ -8,7 +8,7 @@ import {
 import { Reveal } from "react-awesome-reveal";
 import { keyframes } from "@emotion/react";
 import './history.page.scss';
-import {AiOutlineClear, AiFillCloseCircle} from 'react-icons/ai';
+import {AiOutlineClear, AiFillCloseCircle, AiFillCaretRight} from 'react-icons/ai';
 const History = ({ wait = 0, side = false }) => {
     const [history, setHistory] = useState();
     useEffect(() => {
@@ -59,7 +59,7 @@ const History = ({ wait = 0, side = false }) => {
                                 <div className="copy">
                                     <h1>{anime.name}</h1>
                                     <h2>Episode: {anime.episode}</h2>
-                                    <a href={"/watch/" + anime.link}>Watch</a>
+                                    <a href={"/watch/" + anime.link}><b>Watch</b><AiFillCaretRight/></a>
                                 </div>
                             </div>
                         </div>

@@ -75,6 +75,7 @@ function Navbar({
                     onClick={() => {
                         goHome();
                         setOpenHelper(false);
+                        setOpenSearch(false)
                     }}
                 >
                     <Logo />
@@ -110,7 +111,10 @@ function Navbar({
                 </div>
 
                 <div className="helper">
-                    <AiTwotoneSliders onClick={()=>setOpenHelper(!openHelper)}/>
+                    <AiTwotoneSliders onClick={()=>{
+                        setOpenHelper(!openHelper)
+                        setOpenSearch(false)
+                        }}/>
                 </div>
 
                 <div className="history">
@@ -119,6 +123,7 @@ function Navbar({
                         alt="history icon"
                         onClick={() => {
                             goToHistory();
+                            setOpenSearch(false)
                         }}
                     />
                 </div>
