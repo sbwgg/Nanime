@@ -2,7 +2,8 @@ import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { searchGenre } from "../../utilites/utilites.tools";
 import Cards from "../../components/Cards/cards.component";
-import './genre.page.scss';
+import "./genre.page.scss";
+import Pignator from "../../components/Pignator/Pignator.component";
 function Genres() {
     let { genre } = useParams();
     const [animes, setAnimes] = useState([]);
@@ -40,15 +41,7 @@ function Genres() {
                 <div className="sub">
                     <span className="active">Any</span>
                 </div>
-                <div className="pignator">
-                    <div className="minus" onClick={minus}>
-                        -
-                    </div>
-                    <div className="pageNum">{pageNum}</div>
-                    <div className="add" onClick={add}>
-                        +
-                    </div>
-                </div>
+                <Pignator pageNum={pageNum} add={add} minus={minus} />
             </div>
             <Cards animesData={animes} loading={loading} />
         </div>

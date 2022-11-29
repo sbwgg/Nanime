@@ -1,8 +1,13 @@
 import { Link, useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
-import { searchMovies, scrollTop, alphabets } from "../../utilites/utilites.tools";
-import Cards from '../../components/Cards/cards.component';
-import './movies.page.scss';
+import {
+    searchMovies,
+    scrollTop,
+    alphabets,
+} from "../../utilites/utilites.tools";
+import Cards from "../../components/Cards/cards.component";
+import "./movies.page.scss";
+import Pignator from "../../components/Pignator/Pignator.component";
 function Movies() {
     const [animes, setAnimes] = useState([]);
     const { letter } = useParams();
@@ -54,15 +59,7 @@ function Movies() {
                         <div className="sub">
                             <span className="active">Any</span>
                         </div>
-                        <div className="pignator">
-                            <div className="minus" onClick={minus}>
-                                -
-                            </div>
-                            <div className="pageNum">{pageNum}</div>
-                            <div className="add" onClick={add}>
-                                +
-                            </div>
-                        </div>
+                        <Pignator pageNum={pageNum} add={add} minus={minus} />
                     </div>
                     <Cards animesData={animes} loading={loading} />
                 </div>

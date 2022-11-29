@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { getTopAiring } from "../../utilites/utilites.tools";
 import Cards from "../../components/Cards/cards.component";
+import Pignator from "../../components/Pignator/Pignator.component";
 function TopAiring() {
     const [animes, setAnimes] = useState([]);
     const [loading, setLoading] = useState();
@@ -32,15 +33,7 @@ function TopAiring() {
                 <div className="sub">
                     <span className="active">Any</span>
                 </div>
-                <div className="pignator">
-                    <div className="minus" onClick={minus}>
-                        -
-                    </div>
-                    <div className="pageNum">{pageNum}</div>
-                    <div className="add" onClick={add}>
-                        +
-                    </div>
-                </div>
+                <Pignator pageNum={pageNum} add={add} minus={minus}/>
             </div>
             <Cards animesData={animes} loading={loading} />
         </div>

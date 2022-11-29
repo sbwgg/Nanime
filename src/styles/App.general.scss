@@ -79,36 +79,4 @@
             }
         }
     }
-
-    .pignator {
-        display: flex;
-        align-items: center;
-        background-color: theme.$lightblue;
-        box-shadow: theme.$boxshadow;
-        border-radius: 30px;
-
-        .minus,
-        .add {
-            font-size: 23pt;
-            background-color: theme.$lightblue;
-            width: 40px;
-            height: 40px;
-            text-align: center;
-            color: white;
-            border-radius: 50%;
-            cursor: pointer;
-            transition: .3s;
-
-            &:hover {
-                background-color: theme.$lightbluedarker;
-            }
-        }
-
-        .pageNum {
-            font-size: 20pt;
-            margin: 0 20px;
-            color: white;
-            font-weight: 700;
-        }
-    }
 }

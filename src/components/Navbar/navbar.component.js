@@ -1,11 +1,10 @@
 import { useNavigate, useLocation } from "react-router-dom";
 import { useEffect, useState, useRef } from "react";
 import SearchHelper from "../searchHelper/searchHelper.component";
-import SEARCH from "../../assets/icons/search.png";
 import { Link } from "react-scroll";
-import History from "../../assets/icons/history.png";
 import "./navbar.component.scss";
 import Logo from "../logo/logo.component";
+import { FaSearch, FaHistory } from "react-icons/fa";
 function Navbar({
     searchHandler,
     setInput,
@@ -51,12 +50,12 @@ function Navbar({
         document.documentElement.scrollTop = 0;
     };
 
-    const goToHistory = () =>{
-        if(location.pathname !== '/history'){
+    const goToHistory = () => {
+        if (location.pathname !== "/history") {
             handleSideHistory();
             setOpenHelper(false);
         }
-    }
+    };
 
     return (
         <div
@@ -97,8 +96,8 @@ function Navbar({
                         />
                     </form>
                     <div className="searchIcon">
-                        <img
-                            src={SEARCH}
+                        <FaSearch
+                            fill="white"
                             alt="search icon"
                             onClick={(e) => {
                                 searchClick(e);
@@ -108,11 +107,11 @@ function Navbar({
                 </div>
 
                 <div className="history">
-                    <img
-                        src={History}
+                    <FaHistory
+                        fill="white"
                         alt="history icon"
                         onClick={() => {
-                            goToHistory()
+                            goToHistory();
                         }}
                     />
                 </div>
