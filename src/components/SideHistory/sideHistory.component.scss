@@ -24,8 +24,17 @@
         width: fit-content;
         cursor: pointer;
         padding: 5px 20px;
+        padding-left: 10px;
         font-size: 15pt;
         transition: .3s;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        svg{
+            width: 25px;
+            height: 25px;
+            margin-right: 5px;
+        }
 
         &:hover {
             background-color: theme.$lightbluedarker;

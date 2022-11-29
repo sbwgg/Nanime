@@ -112,12 +112,20 @@
                     width: fit-content;
                     font-weight: bold;
                     margin-top: 30px;
-                    padding: 10px 25px;
+                    padding: 10px 20px;
+                    padding-left: 30px;
                     border-radius: 30px;
                     background-color: rgb(255, 93, 28);
                     color: white;
                     cursor: pointer;
                     transition: .3s;
+                    display: flex;
+                    align-items: center;
+                    svg{
+                        height: 30px;
+                        width: 30px;
+                        margin-left: 10px;
+                    }
 
                     &:hover {
                         background-color: rgb(255, 72, 0);

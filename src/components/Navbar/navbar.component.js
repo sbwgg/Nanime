@@ -5,6 +5,7 @@ import { Link } from "react-scroll";
 import "./navbar.component.scss";
 import Logo from "../logo/logo.component";
 import { FaSearch, FaHistory } from "react-icons/fa";
+import { AiTwotoneSliders } from "react-icons/ai";
 function Navbar({
     searchHandler,
     setInput,
@@ -15,19 +16,21 @@ function Navbar({
     const location = useLocation();
     const searchBox = useRef();
     const [openHelper, setOpenHelper] = useState(false);
+    const [openSearch, setOpenSearch] = useState(false)
     const navigate = useNavigate();
     const submitHandler = (e) => {
         e.preventDefault();
+        if(!input)return;
+        setOpenSearch(false);
         navigate(input ? "search/" + input : "/");
         setOpenHelper(false);
         setInput("");
     };
 
     const searchClick = (e) => {
-        if (!input) {
-            setOpenHelper(!openHelper);
-            return;
-        }
+        setOpenSearch(!openSearch);
+        searchBox.current.focus();
+        if (!input) return;
         submitHandler(e);
     };
     useEffect(() => {
@@ -36,7 +39,7 @@ function Navbar({
         });
         window.addEventListener("keypress", (e) => {
             if (e.key === "Enter") {
-                setOpenHelper(true);
+                // setOpenHelper(true);
                 searchBox.current.focus();
             }
         });
@@ -76,7 +79,7 @@ function Navbar({
                 >
                     <Logo />
                 </Link>
-                <div className={`search ${openHelper ? "active" : ""}`}>
+                <div className={`search ${openSearch ? "active" : ""}`}>
                     <form
                         onSubmit={(e) => {
                             submitHandler(e);
@@ -104,6 +107,10 @@ function Navbar({
                             }}
                         />
                     </div>
+                </div>
+
+                <div className="helper">
+                    <AiTwotoneSliders onClick={()=>setOpenHelper(!openHelper)}/>
                 </div>
 
                 <div className="history">

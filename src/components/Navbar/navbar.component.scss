@@ -78,7 +78,7 @@
             border-radius: 40px;
             background-color: rgba(245, 245, 245, 0.307);
             margin-left: auto;
-            margin-right: 20px;
+            margin-right: 0px;
 
             .searchIcon {
                 width: 60px;
@@ -87,7 +87,7 @@
                 align-items: center;
                 justify-content: center;
                 margin: 0 25px;
-                margin-right: 10px;
+                margin-right: 0px;
 
                 svg {
                     cursor: pointer;
@@ -95,7 +95,6 @@
                     height: 30px;
                 }
             }
-
             form {
                 width: 100%;
                 height: 100%;
@@ -119,6 +118,15 @@
             }
         }
 
+        .helper{
+            margin: 0 20px;
+            svg{
+                cursor: pointer;
+                width: 35px;
+                height: 35px;
+                fill: white;
+            }
+        }
 
         .history {
             display: flex;
