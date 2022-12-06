@@ -75,7 +75,7 @@ const History = ({ wait = 0, side = false }) => {
             <div className="header">
                 <h1>History</h1>
                 {history?.length > 0 ? (
-                    <AiOutlineClear/>
+                    <AiOutlineClear onClick={handleClearHistory}/>
                 ) : null}
             </div>
             <div className="historyBody">
