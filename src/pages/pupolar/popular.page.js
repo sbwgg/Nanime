@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import Cards from "../../components/Cards/cards.component";
 import { getPopularAnimes } from "../../utilites/utilites.tools";
 import "./popular.page.scss";
@@ -30,16 +30,20 @@ function Popular() {
     };
 
     return (
-        <div id="Popular" className="layout">
-            <h1 className="strip">Popular</h1>
-            <div className="pager">
-                <div className="sub">
-                    <span className="active">Any</span>
+        <React.Fragment>
+            {animes?.length ? (
+                <div id="Popular" className="layout">
+                    <h1 className="strip">Popular</h1>
+                    <div className="pager">
+                        <div className="sub">
+                            <span className="active">Any</span>
+                        </div>
+                        <Pignator pageNum={pageNum} add={add} minus={minus} />
+                    </div>
+                    <Cards animesData={animes} loading={loading} />
                 </div>
-                <Pignator pageNum={pageNum} add={add} minus={minus} />
-            </div>
-            <Cards animesData={animes} loading={loading} />
-        </div>
+            ) : null}
+        </React.Fragment>
     );
 }
 

@@ -1,7 +1,7 @@
 import { getRecentRelease } from "../../utilites/utilites.tools";
 import Cards from "../../components/Cards/cards.component";
-import { useState, useEffect } from "react";
-import './recentRelease.page.scss';
+import React, { useState, useEffect } from "react";
+import "./recentRelease.page.scss";
 import Pignator from "../../components/Pignator/Pignator.component";
 function RecentRelease() {
     const [animes, setAnimes] = useState([]);
@@ -58,14 +58,18 @@ function RecentRelease() {
         });
     };
     return (
-        <div id="RecentRelease" className="layout">
-            <h1 className="strip">Recent Released</h1>
-            <div className="pager">
-                <div className="sub">{renderType()}</div>
-                <Pignator pageNum={pageNum} add={add} minus={minus}/>
-            </div>
-            <Cards animesData={animes} loading={loading} />
-        </div>
+        <React.Fragment>
+            {animes?.length > 0 ? (
+                <div id="RecentRelease" className="layout">
+                    <h1 className="strip">Recent Released</h1>
+                    <div className="pager">
+                        <div className="sub">{renderType()}</div>
+                        <Pignator pageNum={pageNum} add={add} minus={minus} />
+                    </div>
+                    <Cards animesData={animes} loading={loading} />
+                </div>
+            ) : null}
+        </React.Fragment>
     );
 }
 
