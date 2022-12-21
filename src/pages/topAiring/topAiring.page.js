@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { getTopAiring } from "../../utilites/utilites.tools";
 import Cards from "../../components/Cards/cards.component";
 import Pignator from "../../components/Pignator/Pignator.component";
@@ -27,16 +27,20 @@ function TopAiring() {
         }
     };
     return (
-        <div id="TopAiring" className="layout">
-            <h1 className="strip">Top Airing</h1>
-            <div className="pager">
-                <div className="sub">
-                    <span className="active">Any</span>
+        <React.Fragment>
+            {animes?.length > 0 ? (
+                <div id="TopAiring" className="layout">
+                    <h1 className="strip">Top Airing</h1>
+                    <div className="pager">
+                        <div className="sub">
+                            <span className="active">Any</span>
+                        </div>
+                        <Pignator pageNum={pageNum} add={add} minus={minus} />
+                    </div>
+                    <Cards animesData={animes} loading={loading} />
                 </div>
-                <Pignator pageNum={pageNum} add={add} minus={minus}/>
-            </div>
-            <Cards animesData={animes} loading={loading} />
-        </div>
+            ) : null}
+        </React.Fragment>
     );
 }
 
