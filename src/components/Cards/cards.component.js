@@ -28,7 +28,7 @@ function Cards({ animesData, loading }) {
 
     return (
         <React.Fragment>
-            {animesData.length > 0 ? (
+            {animesData?.length > 0 ? (
                 <div className="Cards">
                     <Reveal
                         keyframes={customAnimation}
